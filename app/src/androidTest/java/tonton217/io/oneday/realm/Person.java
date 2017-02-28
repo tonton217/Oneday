@@ -1,22 +1,22 @@
 package tonton217.io.oneday.realm;
 
+import io.realm.RealmObject;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author wjjung
  */
-class Person {
-    private final String name;
-    private final int age;
+@AllArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = false)
+public class Person extends RealmObject {
+    private long id;
+    private String name;
+    private int age;
 
-    Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
+    public Person() {}
 }
